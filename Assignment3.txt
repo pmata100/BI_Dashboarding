@@ -1,0 +1,467 @@
+{
+   "title": "Revenue vs Spend",
+   "id": "6af3d50a9cb86339a7d510ec6519d46e",
+   "workspace": {
+      "dimensions": {
+         "w": 445
+      },
+      "datasources": [
+         "be30535e3d7a1b5acd4d8060f2b66ca3"
+      ]
+   },
+   "components": [
+      {
+         "type": "chart_series",
+         "id": "f16b5bb5-1",
+         "displayName": "Series Chart",
+         "components": [
+            {
+               "type": "series_data",
+               "role": "series",
+               "id": "482d2994-2",
+               "displayName": "Revenue",
+               "fmt": "num",
+               "conditions": [
+                  {
+                     "predicates": [
+                        {
+                           "left": {
+                              "self": 1
+                           },
+                           "type": "lt",
+                           "right": {
+                              "cx": "15b203cf-5"
+                           }
+                        }
+                     ],
+                     "reactions": [
+                        {
+                           "type": "color",
+                           "value": "cx-theme_red_3"
+                        }
+                     ]
+                  }
+               ],
+               "formulas": [
+                  {
+                     "txt": "groupby(select(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,C:C;),(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;=$SelectedCountry)),select(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,D:D;),(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;=$SelectedCountry)))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "groupby",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "select",
+                                    "c": [
+                                       {
+                                          "t": "f",
+                                          "v": "slice",
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,C:C"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "start",
+                                                   "optional": true,
+                                                   "description": "Indicates the number of items sliced off the top.",
+                                                   "default": "1"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "end",
+                                                   "optional": true,
+                                                   "description": "Indicates the position of the last item to be returned.",
+                                                   "default": "length of the list"
+                                                }
+                                             }
+                                          ]
+                                       },
+                                       {
+                                          "t": "expr",
+                                          "v": false,
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,A:A"
+                                                }
+                                             },
+                                             {
+                                                "t": "o",
+                                                "v": "="
+                                             },
+                                             {
+                                                "t": "var",
+                                                "v": "SelectedCountry"
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "f",
+                                    "v": "select",
+                                    "c": [
+                                       {
+                                          "t": "f",
+                                          "v": "slice",
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,D:D"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "start",
+                                                   "optional": true,
+                                                   "description": "Indicates the number of items sliced off the top.",
+                                                   "default": "1"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "end",
+                                                   "optional": true,
+                                                   "description": "Indicates the position of the last item to be returned.",
+                                                   "default": "length of the list"
+                                                }
+                                             }
+                                          ]
+                                       },
+                                       {
+                                          "t": "expr",
+                                          "v": false,
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,A:A"
+                                                }
+                                             },
+                                             {
+                                                "t": "o",
+                                                "v": "="
+                                             },
+                                             {
+                                                "t": "var",
+                                                "v": "SelectedCountry"
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "a",
+                                    "v": null,
+                                    "arg_obj": {
+                                       "placeholder": "method",
+                                       "description": "",
+                                       "optional": true,
+                                       "default": "sum(values)"
+                                    }
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     3200,
+                     5000,
+                     3000,
+                     15000,
+                     8500,
+                     7000,
+                     20000,
+                     3000
+                  ]
+               ],
+               "seriesName": "Revenue",
+               "axis": "4fbda475-4"
+            },
+            {
+               "type": "series_data",
+               "role": "series",
+               "id": "15b203cf-5",
+               "displayName": "Spend",
+               "fmt": "num",
+               "formulas": [
+                  {
+                     "txt": "groupby(select(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,C:C;),(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;=$SelectedCountry)),select(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,E:E;,(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;=$SelectedCountry)))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "groupby",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "select",
+                                    "c": [
+                                       {
+                                          "t": "f",
+                                          "v": "slice",
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,C:C"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "start",
+                                                   "optional": true,
+                                                   "description": "Indicates the number of items sliced off the top.",
+                                                   "default": "1"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "end",
+                                                   "optional": true,
+                                                   "description": "Indicates the position of the last item to be returned.",
+                                                   "default": "length of the list"
+                                                }
+                                             }
+                                          ]
+                                       },
+                                       {
+                                          "t": "expr",
+                                          "v": false,
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,A:A"
+                                                }
+                                             },
+                                             {
+                                                "t": "o",
+                                                "v": "="
+                                             },
+                                             {
+                                                "t": "var",
+                                                "v": "SelectedCountry"
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "f",
+                                    "v": "select",
+                                    "c": [
+                                       {
+                                          "t": "d",
+                                          "v": {
+                                             "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                             "a": "Sheet1,E:E"
+                                          }
+                                       },
+                                       {
+                                          "t": "expr",
+                                          "v": false,
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,A:A"
+                                                }
+                                             },
+                                             {
+                                                "t": "o",
+                                                "v": "="
+                                             },
+                                             {
+                                                "t": "var",
+                                                "v": "SelectedCountry"
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "a",
+                                    "v": null,
+                                    "arg_obj": {
+                                       "placeholder": "method",
+                                       "description": "",
+                                       "optional": true,
+                                       "default": "sum(values)"
+                                    }
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     20500,
+                     9000,
+                     3000,
+                     2500,
+                     1000,
+                     6000,
+                     2000,
+                     18000
+                  ]
+               ],
+               "seriesName": "Spend",
+               "axis": "4fbda475-4",
+               "overrideColor": true,
+               "color": "cx-theme_yellow_3"
+            },
+            {
+               "type": "chart_axis",
+               "role": "axis_x",
+               "id": "742d4e84-3",
+               "displayName": "Company",
+               "fmt": "txt",
+               "formulas": [
+                  {
+                     "txt": "group(select(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,C:C;),(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;=$SelectedCountry)))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "group",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "select",
+                                    "c": [
+                                       {
+                                          "t": "f",
+                                          "v": "slice",
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,C:C"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "start",
+                                                   "optional": true,
+                                                   "description": "Indicates the number of items sliced off the top.",
+                                                   "default": "1"
+                                                }
+                                             },
+                                             {
+                                                "t": "a",
+                                                "v": null,
+                                                "arg_obj": {
+                                                   "placeholder": "end",
+                                                   "optional": true,
+                                                   "description": "Indicates the position of the last item to be returned.",
+                                                   "default": "length of the list"
+                                                }
+                                             }
+                                          ]
+                                       },
+                                       {
+                                          "t": "expr",
+                                          "v": false,
+                                          "c": [
+                                             {
+                                                "t": "d",
+                                                "v": {
+                                                   "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                                   "a": "Sheet1,A:A"
+                                                }
+                                             },
+                                             {
+                                                "t": "o",
+                                                "v": "="
+                                             },
+                                             {
+                                                "t": "var",
+                                                "v": "SelectedCountry"
+                                             }
+                                          ]
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     "Alfa",
+                     "Bravo",
+                     "Charlie",
+                     "Delta",
+                     "Echo",
+                     "Foxtrot",
+                     "Golf",
+                     "Papa"
+                  ]
+               ],
+               "label": "Company",
+               "labelDrop": 0,
+               "showLabelTicks": true
+            },
+            {
+               "type": "chart_axis",
+               "role": "axis_y",
+               "id": "4fbda475-4",
+               "displayName": "Amount",
+               "fmt": "num",
+               "formulas": [],
+               "data": [],
+               "dataDisabled": true,
+               "label": "Amount",
+               "labelDrop": 0,
+               "grid": true
+            }
+         ],
+         "height": "2"
+      }
+   ]
+}

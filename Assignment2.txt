@@ -1,0 +1,95 @@
+{
+   "title": "Country",
+   "id": "19f655bd51ffa7b1b8a941c2ba7ec4c7",
+   "workspace": {
+      "dimensions": {
+         "w": 445
+      },
+      "datasources": [
+         "be30535e3d7a1b5acd4d8060f2b66ca3"
+      ]
+   },
+   "components": [
+      {
+         "type": "input",
+         "id": "9630cbda-1",
+         "displayName": "Drop-Down List",
+         "components": [
+            {
+               "type": "proxy",
+               "role": "values",
+               "id": "314aeef2-2",
+               "displayName": "Values",
+               "formulas": [
+                  {
+                     "txt": "group(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,A:A;))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "group",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "slice",
+                                    "c": [
+                                       {
+                                          "t": "d",
+                                          "v": {
+                                             "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                             "a": "Sheet1,A:A"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "start",
+                                             "optional": true,
+                                             "description": "Indicates the number of items sliced off the top.",
+                                             "default": "1"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "end",
+                                             "optional": true,
+                                             "description": "Indicates the position of the last item to be returned.",
+                                             "default": "length of the list"
+                                          }
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     "Canada",
+                     "Mexico",
+                     "United States"
+                  ]
+               ]
+            },
+            {
+               "type": "proxy",
+               "role": "labels",
+               "id": "b1f05f13-3",
+               "displayName": "Labels",
+               "formulas": [],
+               "data": []
+            }
+         ],
+         "scope": 2,
+         "propName": "SelectedCountry",
+         "inputType": 1
+      }
+   ]
+}

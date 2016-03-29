@@ -1,0 +1,208 @@
+{
+   "title": "Revenue by City",
+   "id": "5c7fbbee4dc75030d1189c1e9df1c177",
+   "workspace": {
+      "dimensions": {
+         "w": 445
+      },
+      "datasources": [
+         "be30535e3d7a1b5acd4d8060f2b66ca3"
+      ]
+   },
+   "components": [
+      {
+         "type": "chart_pie",
+         "id": "3baa8069-1",
+         "displayName": "Pie Chart",
+         "size": "3",
+         "components": [
+            {
+               "type": "series_data",
+               "role": "data",
+               "id": "b4bf7824-2",
+               "displayName": "Values",
+               "fmt": "num",
+               "formulas": [
+                  {
+                     "txt": "groupby(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,B:B;),slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,D:D;))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "groupby",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "slice",
+                                    "c": [
+                                       {
+                                          "t": "d",
+                                          "v": {
+                                             "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                             "a": "Sheet1,B:B"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "start",
+                                             "optional": true,
+                                             "description": "Indicates the number of items sliced off the top.",
+                                             "default": "1"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "end",
+                                             "optional": true,
+                                             "description": "Indicates the position of the last item to be returned.",
+                                             "default": "length of the list"
+                                          }
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "f",
+                                    "v": "slice",
+                                    "c": [
+                                       {
+                                          "t": "d",
+                                          "v": {
+                                             "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                             "a": "Sheet1,D:D"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "start",
+                                             "optional": true,
+                                             "description": "Indicates the number of items sliced off the top.",
+                                             "default": "1"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "end",
+                                             "optional": true,
+                                             "description": "Indicates the position of the last item to be returned.",
+                                             "default": "length of the list"
+                                          }
+                                       }
+                                    ]
+                                 },
+                                 {
+                                    "t": "a",
+                                    "v": null,
+                                    "arg_obj": {
+                                       "placeholder": "method",
+                                       "description": "",
+                                       "optional": true,
+                                       "default": "sum(values)"
+                                    }
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     30000,
+                     24000,
+                     7750,
+                     13000,
+                     10500,
+                     17000,
+                     28000,
+                     20000,
+                     16700
+                  ]
+               ]
+            },
+            {
+               "type": "series_labels",
+               "role": "labels",
+               "id": "a9843552-3",
+               "displayName": "Labels",
+               "fmt": "txt",
+               "formulas": [
+                  {
+                     "txt": "group(slice(be30535e3d7a1b5acd4d8060f2b66ca3@Sheet1,B:B;))",
+                     "src": {
+                        "t": "expr",
+                        "v": false,
+                        "c": [
+                           {
+                              "t": "f",
+                              "v": "group",
+                              "c": [
+                                 {
+                                    "t": "f",
+                                    "v": "slice",
+                                    "c": [
+                                       {
+                                          "t": "d",
+                                          "v": {
+                                             "id": "be30535e3d7a1b5acd4d8060f2b66ca3",
+                                             "a": "Sheet1,B:B"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "start",
+                                             "optional": true,
+                                             "description": "Indicates the number of items sliced off the top.",
+                                             "default": "1"
+                                          }
+                                       },
+                                       {
+                                          "t": "a",
+                                          "v": null,
+                                          "arg_obj": {
+                                             "placeholder": "end",
+                                             "optional": true,
+                                             "description": "Indicates the position of the last item to be returned.",
+                                             "default": "length of the list"
+                                          }
+                                       }
+                                    ]
+                                 }
+                              ]
+                           }
+                        ]
+                     }
+                  }
+               ],
+               "data": [
+                  [
+                     "Acapulco",
+                     "Boston",
+                     "Cancun",
+                     "Los Angeles",
+                     "Mexico City",
+                     "Montreal",
+                     "Toronto",
+                     "Whitehorse",
+                     "Winnipeg"
+                  ]
+               ]
+            }
+         ],
+         "legend_items": "10",
+         "sort": "3",
+         "legend_percentages": "0"
+      }
+   ]
+}
